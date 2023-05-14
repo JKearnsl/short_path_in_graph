@@ -106,7 +106,7 @@ class FSPView(QMainWindow, TransportSolutionDObserver, metaclass=TSMeta):
 
         # Время поиска
         if self.model.search_time:
-            self.ui.searchTime.setText(f"{round(self.model.search_time, 6)} сек.")
+            self.ui.searchTime.setText(f"{round(self.model.search_time, 6)} мс.")
 
         # Результат
         if self.model.is_found:
