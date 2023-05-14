@@ -1,7 +1,6 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsProxyWidget
 
-from src.model.enum.graph import GraphType
 from src.model.enum.graph import ShowGraphAs
 from src.model.enum.problem import AlgorithmType
 from src.utils.observer import TransportSolutionDObserver
@@ -29,9 +28,6 @@ class FSPView(QMainWindow, TransportSolutionDObserver, metaclass=TSMeta):
         for el in AlgorithmType:
             self.ui.algType.addItem(el.value, el)
 
-        for el in GraphType:
-            self.ui.graphType.addItem(el.value, el)
-
         for el in ShowGraphAs:
             self.ui.viewGraphAs.addItem(el.value, el)
 
@@ -43,7 +39,6 @@ class FSPView(QMainWindow, TransportSolutionDObserver, metaclass=TSMeta):
 
         # События
         self.ui.algType.currentIndexChanged.connect(self.controller.input_alg_type)
-        self.ui.graphType.currentIndexChanged.connect(self.controller.input_graph_type)
         self.ui.viewGraphAs.currentIndexChanged.connect(self.controller.input_view_graph_as)
         self.ui.searchValue.textChanged.connect(self.controller.input_search_vertex)
         self.ui.startValue.textChanged.connect(self.controller.input_start_vertex)
@@ -68,7 +63,7 @@ class FSPView(QMainWindow, TransportSolutionDObserver, metaclass=TSMeta):
             self.ui.inputGraph.setItemWidget(item, rgi_widget)
 
         # Перерисовка графа
-        graph = Graph(arrows=self.model.graph_type == GraphType.DIRECTED)
+        graph = Graph()
 
         graph_data = self.model.graph if self.model.show_graph_as == ShowGraphAs.FULL_GRAPH else self.model.visited_path
 

@@ -19,10 +19,6 @@ class FSPController:
         _ = self.view.ui.algType.currentData(Qt.ItemDataRole.UserRole)
         self.model.algorithm_type = _
 
-    def input_graph_type(self):
-        _ = self.view.ui.graphType.currentData(Qt.ItemDataRole.UserRole)
-        self.model.graph_type = _
-
     def input_view_graph_as(self):
         _ = self.view.ui.viewGraphAs.currentData(Qt.ItemDataRole.UserRole)
         self.model.show_graph_as = _

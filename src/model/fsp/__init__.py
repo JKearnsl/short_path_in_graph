@@ -1,4 +1,4 @@
-from src.model.enum.graph import GraphType, ShowGraphAs
+from src.model.enum.graph import ShowGraphAs
 from src.model.enum.problem import AlgorithmType
 from src.model.fsp.bfa import bellman_ford_algorithm
 
@@ -8,7 +8,6 @@ class FSPModel:
     def __init__(self):
         self._graph = []
 
-        self._graph_type: GraphType = GraphType.DIRECTED
         self._algorithm_type: AlgorithmType = AlgorithmType.BFA
         self._show_graph_as: ShowGraphAs = ShowGraphAs.FULL_GRAPH
         self._search_vertex = None
@@ -30,10 +29,6 @@ class FSPModel:
     @property
     def is_found(self):
         return self._is_found
-
-    @property
-    def graph_type(self) -> GraphType:
-        return self._graph_type
 
     @property
     def search_time(self):
@@ -90,9 +85,6 @@ class FSPModel:
             if branch['to_node'] not in graph:
                 graph[branch['to_node']] = {}
 
-                if self._graph_type == GraphType.UNDIRECTED:
-                    graph[branch['to_node']][branch['from_node']] = int(branch['weight'])
-
         self._is_found = False
         self._search_time = None
         self._short_value = None
@@ -131,12 +123,6 @@ class FSPModel:
     @graph.setter
     def graph(self, value):
         self._graph = value
-        self.solve()
-        self.notify_observers()
-
-    @graph_type.setter
-    def graph_type(self, value: GraphType):
-        self._graph_type = value
         self.solve()
         self.notify_observers()
 
