@@ -63,7 +63,7 @@ class FSPView(QMainWindow, TransportSolutionDObserver, metaclass=TSMeta):
             self.ui.inputGraph.setItemWidget(item, rgi_widget)
 
         # Перерисовка графа
-        graph = Graph()
+        graph = Graph(node_size=1000)
 
         graph_data = self.model.graph if self.model.show_graph_as == ShowGraphAs.FULL_GRAPH else self.model.visited_path
 
@@ -79,14 +79,14 @@ class FSPView(QMainWindow, TransportSolutionDObserver, metaclass=TSMeta):
                 graph.style_node(
                     f'{self.model.start_vertex}[{self.model.distance[self.model.start_vertex]}]',
                     node_color='aquamarine',
-                    node_size=500
+                    node_size=1000
                 )
 
             if self.model.vertex_in_graph(self.model.search_vertex) and self.model.is_found:
                 graph.style_node(
                     f'{self.model.search_vertex}[{self.model.distance[self.model.search_vertex]}]',
                     node_color='red',
-                    node_size=500
+                    node_size=1000
                 )
 
         graph.canvas().figure.clf()

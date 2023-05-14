@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(965, 575)
+        MainWindow.resize(1033, 731)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -156,6 +156,12 @@ class Ui_MainWindow(object):
         self.outputGraph.setObjectName("outputGraph")
         self.verticalLayout_2.addWidget(self.outputGraph)
         self.groupBox_2 = QtWidgets.QGroupBox(parent=self.splitter)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy)
+        self.groupBox_2.setMaximumSize(QtCore.QSize(16777215, 110))
         self.groupBox_2.setTitle("")
         self.groupBox_2.setObjectName("groupBox_2")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.groupBox_2)
@@ -200,7 +206,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.outputBox)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 965, 29))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1033, 29))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
