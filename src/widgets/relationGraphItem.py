@@ -16,27 +16,31 @@ class RGI(QtWidgets.QWidget):
         self._index = index
 
         layout = QtWidgets.QHBoxLayout()
+        layout.setContentsMargins(20, 5, 20, 5)
 
         layout.addWidget(QtWidgets.QLabel(f"[{index + 1}]"))
 
         layout.addItem(QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum
+            15, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum
         ))
 
         layout.addWidget(QtWidgets.QLabel("Из: "))
         self._from_widget = QtWidgets.QLineEdit()
+        self._from_widget.setMaximumWidth(50)
         self._from_widget.setText(str(_from))
         self._from_widget.textChanged.connect(self.signal_change)
         layout.addWidget(self._from_widget)
 
         layout.addWidget(QtWidgets.QLabel("В: "))
         self._to_widget = QtWidgets.QLineEdit()
+        self._to_widget.setMaximumWidth(50)
         self._to_widget.setText(str(_to))
         self._to_widget.textChanged.connect(self.signal_change)
         layout.addWidget(self._to_widget)
 
         layout.addWidget(QtWidgets.QLabel("Вес: "))
         self._weight_widget = QtWidgets.QLineEdit()
+        self._weight_widget.setMaximumWidth(50)
         self._weight_widget.setValidator(QtGui.QIntValidator())
         self._weight_widget.setText(str(_weight))
         self._weight_widget.textChanged.connect(self.signal_change)
