@@ -11,6 +11,10 @@
 
 ### Интерфейс
 
+![image](https://github.com/JKearnsl/short_path_in_graph/assets/76239707/d99327da-2fed-4089-b56e-b84586bd3aa3)
+
+![image](https://github.com/JKearnsl/short_path_in_graph/assets/76239707/072db912-e595-4041-810d-d4a5cbbf3b8a)
+
 
 ### Сборка
 
