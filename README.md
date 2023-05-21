@@ -16,6 +16,10 @@
 ![image](https://github.com/JKearnsl/short_path_in_graph/assets/76239707/072db912-e595-4041-810d-d4a5cbbf3b8a)
 
 
+### Алгоритм Беллмана-Форда
+
+https://github.com/JKearnsl/short_path_in_graph/blob/ad6ad59df5afcddd360a79b653d93cf7a3044a83/src/model/fsp/bfa.py#L4-L38
+
 ### Сборка
 
 Приложение написано на `Python3.11`. Необходимо установить следующие библиотеки:
